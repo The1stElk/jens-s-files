@@ -21,7 +21,7 @@ button:hover{background:var(--surface-1);}
 </head>
 <body>
 <h1>Der Fall Jens Söring – alle Beteiligten im Überblick</h1>
-<p class="sub">Haysom-Morde, Bedford County (Virginia), 30. März 1985 · Klick auf eine Person zeigt Rolle, Haltung und Verbindungen · Stand: Juli 2026</p>
+<p class="sub">Haysom-Morde, Bedford County (Virginia), 30. März 1985 · Klick auf eine Person zeigt Rolle, Haltung, Verbindungen und dein Notizfeld · Stand: Juli 2026</p>
 <div style="display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;margin:0 0 10px;font-size:12px;color:var(--text-secondary);">
 <span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#3C3489;border:1.5px solid #AFA9EC;vertical-align:-1px;"></span> Hauptfigur</span>
 <span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#712B13;border:1.5px solid #F0997B;vertical-align:-1px;"></span> hält Söring für schuldig / belastend</span>
@@ -51,8 +51,19 @@ button:hover{background:var(--surface-1);}
 <text class="ts" x="52" y="938" font-size="11">Verfahren 2019 und 2026</text>
 <g id="edges"></g>
 <g id="nodes"></g>
+<g id="marks"></g>
 </svg>
 <div id="panel" style="background:var(--surface-2);border:0.5px solid var(--border);border-radius:12px;padding:1rem 1.25rem;margin-top:12px;"></div>
+<h2 style="font-size:18px;font-weight:500;margin:28px 0 4px;">Ermittlernotizen</h2>
+<p style="font-size:12px;color:var(--text-muted);margin:0 0 14px;">Notizen werden lokal in diesem Browser gespeichert und bleiben beim nächsten Öffnen erhalten. Personen mit Notiz erhalten einen orangen Punkt im Netzwerk. Zum Teilen oder Sichern als Textdatei exportieren.</p>
+<div style="background:var(--surface-2);border:0.5px solid var(--border);border-radius:12px;padding:1rem 1.25rem;">
+<p style="margin:0 0 4px;font-size:12px;color:var(--text-muted);">Allgemeine Fallnotizen</p>
+<textarea id="casenotes" rows="5" placeholder="Hypothesen, offene Fragen, Widersprüche …" style="width:100%;box-sizing:border-box;font:inherit;font-size:13px;line-height:1.5;padding:8px 10px;border:0.5px solid var(--border-strong);border-radius:var(--radius);background:var(--surface-1);color:var(--text-primary);resize:vertical;"></textarea>
+<div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;">
+<button id="exportnotes">Notizen als Textdatei exportieren</button>
+<button id="clearnotes">Alle Notizen löschen</button>
+</div>
+</div>
 <h2 style="font-size:18px;font-weight:500;margin:28px 0 4px;">Beobachtungen und Schlussfolgerungen</h2>
 <p style="font-size:12px;color:var(--text-muted);margin:0 0 14px;">Einordnungen auf Basis der unten verlinkten Quellen – keine neuen Tatsachen. Söring ist rechtskräftig verurteilt; das Verfahren 2026 läuft.</p>
 <div style="background:var(--surface-2);border:0.5px solid var(--border);border-radius:12px;padding:1rem 1.25rem;">
@@ -111,12 +122,12 @@ var N=[
 var E=[['jens','elizabeth','Paar 1984/85 – beschuldigen einander'],['jens','derek','verurteilt für den Mord an ihm'],['jens','nancy','verurteilt für den Mord an ihr'],['elizabeth','derek','Tochter – Beihilfe verurteilt'],['elizabeth','nancy','Tochter – Missbrauchsvorwurf 2016'],['klaus','jens','Vater'],['sheena','nancy','Enkelin'],['sheena','eharding','DNA-Probe 2025 für die Petition'],['workman','elizabeth','Cousine, Sprachrohr der Familie'],['gardner','jens','ermittelte gegen ihn, hält ihn für schuldig'],['reid','jens','Mit-Ermittler mit wachsenden Zweifeln'],['updike','jens','führte die Anklage 1990'],['updike','elizabeth','Verfahren gegen sie 1987'],['sweeney','jens','Vorsitz im Prozess 1990'],['sweeney','elizabeth','kannte ihren Onkel, leitete ihr Verfahren'],['neaton','jens','verteidigte ihn'],['wright','jens','Verhör in London 1986'],['sulzbach','elizabeth','FBI-Profil deutete auf sie'],['hallett','jens','Sockenabdruck-Gutachten gegen ihn'],['hammel','jens','widerlegt seine Unschuldsargumente'],['brauner','jens','kritischer Podcast über ihn'],['behre','jens','kritischer Podcast über ihn'],['brauner','behre','Podcast-Team'],['jung','jens','kritisiert seine Medieninszenierung'],['vetter','jens','Doku stützt Unschuldsthese'],['vetter','steinberger','Co-Regie'],['netflix','jens','ausführliche Interviews'],['netflix','workman','Familieninterviews'],['chip','jens','Bericht 2017: unschuldig'],['chip','hudson','gemeinsame Nachermittlung'],['rosenfield','jens','Anwalt, Begnadigungsgesuch 2016'],['marshall','jens','stützte die Petition'],['grisham','jens','prominenter Fürsprecher'],['sheen','jens','Fürsprecher, Buch-Vorwort'],['flom','jens','Podcast-Folge zum Fall'],['knox','jens','Podcast zum Fall'],['wulff','jens','erschien zur Anhörung 2017'],['wittig','jens','„von Unschuld überzeugt“'],['merkel','jens','warb für Überstellung'],['innocence','jens','stützt Petition mit DNA-Befund'],['northam','jens','Bewährung und Abschiebung 2019'],['northam','elizabeth','Bewährung 2019'],['eharding','jens','Anwalt, Petition Februar 2026'],['eharding','court','Petition dort anhängig'],['dolen','eharding','kooperiert, Akteneinsicht'],['miller','jens','kein Kommentar zum offenen Fall'],['farmer','elizabeth','laut Söring ihr Drogenkontakt'],['farmer','jens','Kern seiner Alibi-Erzählung'],['kreis','jens','trägt seine Kampagne in Deutschland'],['hermanns','kreis','Sprecherin']];
 var svgNS='http://www.w3.org/2000/svg';
 var byId={};N.forEach(function(n){byId[n.id]=n;});
-var eg=document.getElementById('edges'),ng=document.getElementById('nodes');
+var eg=document.getElementById('edges'),ng=document.getElementById('nodes'),mg=document.getElementById('marks');var curSel='jens';var NK='soering-notizen';function loadNotes(){try{return JSON.parse(localStorage.getItem(NK))||{}}catch(e){return{}}}function refreshMark(id){var n=byId[id];if(!n||!n.mark)return;n.mark.setAttribute('visibility',loadNotes()[id]?'visible':'hidden')}function saveNote(id,val){var o=loadNotes();if(val&&val.trim()){o[id]=val}else{delete o[id]}localStorage.setItem(NK,JSON.stringify(o));refreshMark(id)}
 E.forEach(function(e){var a=byId[e[0]],b=byId[e[1]];var ln=document.createElementNS(svgNS,'line');ln.setAttribute('x1',a.x);ln.setAttribute('y1',a.y);ln.setAttribute('x2',b.x);ln.setAttribute('y2',b.y);ln.setAttribute('stroke','#888780');ln.setAttribute('stroke-width','1');ln.setAttribute('opacity','0.22');e.push(ln);eg.appendChild(ln);});
 N.forEach(function(n){var g=document.createElementNS(svgNS,'g');g.setAttribute('class','c-'+n.c);g.style.cursor='pointer';var s;if(n.sq){s=document.createElementNS(svgNS,'rect');s.setAttribute('x',n.x-n.r);s.setAttribute('y',n.y-n.r);s.setAttribute('width',n.r*2);s.setAttribute('height',n.r*2);s.setAttribute('rx','4');}else{s=document.createElementNS(svgNS,'circle');s.setAttribute('cx',n.x);s.setAttribute('cy',n.y);s.setAttribute('r',n.r);}
 s.setAttribute('stroke-width','1.5');if(n.v){s.setAttribute('stroke-dasharray','3 3');}
 g.appendChild(s);var t=document.createElementNS(svgNS,'text');t.setAttribute('class','ts');t.setAttribute('x',n.x);t.setAttribute('y',n.y+n.r+13);t.setAttribute('text-anchor','middle');t.setAttribute('font-size','11');n.l.forEach(function(line,i){var sp=document.createElementNS(svgNS,'tspan');sp.setAttribute('x',n.x);if(i>0)sp.setAttribute('dy','12');sp.textContent=line;t.appendChild(sp);});
-g.appendChild(t);g.addEventListener('click',function(){select(n.id);});n.g=g;n.shape=s;ng.appendChild(g);});
+g.appendChild(t);g.addEventListener('click',function(){select(n.id);});n.g=g;n.shape=s;ng.appendChild(g);var mk=document.createElementNS(svgNS,'circle');mk.setAttribute('cx',n.x+n.r-2);mk.setAttribute('cy',n.y-n.r+2);mk.setAttribute('r','4.5');mk.setAttribute('fill','#EF9F27');mk.setAttribute('visibility','hidden');n.mark=mk;mg.appendChild(mk);});N.forEach(function(n){refreshMark(n.id);});
 var campNames={purple:'Hauptfigur',coral:'hält Söring für schuldig / belastend',teal:'von Unschuld überzeugt / entlastend',gray:'neutral / ohne Lager'};
 var badgeCss={purple:'background:#3C3489;color:#CECBF6;',coral:'background:#712B13;color:#F5C4B3;',teal:'background:#085041;color:#9FE1CB;',gray:'background:#444441;color:#D3D1C7;'};
 function reset(){N.forEach(function(n){n.g.setAttribute('opacity','1');n.shape.setAttribute('stroke-width','1.5');});E.forEach(function(e){e[3].setAttribute('stroke','#888780');e[3].setAttribute('opacity','0.22');e[3].setAttribute('stroke-width','1');});}
@@ -126,12 +137,12 @@ var h='<p style="margin:0;font-size:16px;font-weight:500;">'+n.l.join(' ')+' <sp
 h+='<p style="margin:2px 0 8px;font-size:13px;color:var(--text-secondary);">'+n.role+'</p>';
 h+='<p style="margin:0 0 10px;font-size:14px;line-height:1.6;">'+n.d+'</p>';
 if(rel.length){h+='<p style="margin:0 0 6px;font-size:12px;color:var(--text-muted);">Verbindungen</p><div style="display:flex;flex-wrap:wrap;gap:6px;">';rel.forEach(function(r){var o=byId[r[0]];h+='<button style="font-size:12px;padding:4px 10px;" data-sel="'+r[0]+'">'+o.l.join(' ')+' · '+r[1]+'</button>';});h+='</div>';}
-var p=document.getElementById('panel');p.innerHTML=h;p.querySelectorAll('[data-sel]').forEach(function(b){b.addEventListener('click',function(){select(b.getAttribute('data-sel'));});});}
+h+='<p style="margin:14px 0 4px;font-size:12px;color:var(--text-muted);"><i class="note-ico"></i>Meine Ermittlungsnotizen zu '+n.l.join(' ')+'</p>'+'<textarea id="notearea" rows="3" placeholder="Notiz eintragen – wird automatisch in diesem Browser gespeichert" style="width:100%;box-sizing:border-box;font:inherit;font-size:13px;line-height:1.5;padding:8px 10px;border:0.5px solid var(--border-strong);border-radius:var(--radius);background:var(--surface-1);color:var(--text-primary);resize:vertical;"></textarea>';var p=document.getElementById('panel');p.innerHTML=h;p.querySelectorAll('[data-sel]').forEach(function(b){b.addEventListener('click',function(){select(b.getAttribute('data-sel'));});});curSel=id;var ta=p.querySelector('#notearea');if(ta){ta.value=loadNotes()[id]||'';ta.addEventListener('input',function(){saveNote(id,ta.value);});}}
 document.querySelectorAll('[data-f]').forEach(function(b){b.addEventListener('click',function(){var f=b.getAttribute('data-f');reset();if(f==='all'){select('jens');return;}
 N.forEach(function(m){m.g.setAttribute('opacity',m.c===f?'1':'0.18');});E.forEach(function(e){e[3].setAttribute('opacity','0.08');});
 var names=N.filter(function(m){return m.c===f;}).map(function(m){return m.l.join(' ');});
 document.getElementById('panel').innerHTML='<p style="margin:0 0 6px;font-size:14px;font-weight:500;">'+campNames[f]+'</p><p style="margin:0;font-size:14px;line-height:1.6;color:var(--text-secondary);">'+names.join(' · ')+'</p>';});});
-select('jens');
+var ca=document.getElementById('casenotes');ca.value=loadNotes()['_fall']||'';ca.addEventListener('input',function(){saveNote('_fall',ca.value);});document.getElementById('exportnotes').addEventListener('click',function(){var o=loadNotes();var t='Ermittlungsnotizen – Fall Jens Söring\nStand: '+new Date().toLocaleString('de-DE')+'\n\n';if(o['_fall']){t+='Allgemeine Fallnotizen:\n'+o['_fall']+'\n\n';}N.forEach(function(n){if(o[n.id]){t+=n.l.join(' ')+':\n'+o[n.id]+'\n\n';}});var b=new Blob([t],{type:'text/plain;charset=utf-8'});var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='soering-ermittlungsnotizen.txt';a.click();});document.getElementById('clearnotes').addEventListener('click',function(){if(confirm('Wirklich alle Notizen löschen?')){localStorage.removeItem(NK);N.forEach(function(n){refreshMark(n.id);});ca.value='';select(curSel);}});select('jens');
 </script>
 </body>
 </html>
