@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fall Jens Söring · Recherche-Werkstatt – Mitmachen</title>
+<style>
+:root{--bg:#faf9f5;--surface-1:#f7f6f3;--surface-2:#ffffff;--text-primary:#1a1a18;--text-secondary:#5f5e5a;--text-muted:#888780;--border:#d3d1c7;--border-strong:#b4b2a9;--radius:10px;
+--coral-f:#FAECE7;--coral-s:#993C1D;--coral-t:#712B13;--teal-f:#E1F5EE;--teal-s:#0F6E56;--teal-t:#085041;--gray-f:#F1EFE8;--gray-s:#5F5E5A;--gray-t:#444441;--purple-f:#EEEDFE;--purple-s:#534AB7;--purple-t:#3C3489;
+--green:#0F6E56;--amber:#BA7517;--red:#993C1D;--note-bg:#FAEEDA;--note-border:#BA7517;--note-text:#633806;}
+html[data-theme="dark"]{--bg:#1e1e1c;--surface-1:#32322f;--surface-2:#262624;--text-primary:#f0efe9;--text-secondary:#b4b2a9;--text-muted:#888780;--border:#444441;--border-strong:#5f5e5a;
+--coral-f:#712B13;--coral-s:#F0997B;--coral-t:#F5C4B3;--teal-f:#085041;--teal-s:#5DCAA5;--teal-t:#9FE1CB;--gray-f:#444441;--gray-s:#B4B2A9;--gray-t:#D3D1C7;--purple-f:#3C3489;--purple-s:#AFA9EC;--purple-t:#CECBF6;
+--green:#5DCAA5;--amber:#FAC775;--red:#F0997B;--note-bg:#3a2c14;--note-border:#BA7517;--note-text:#FAC775;}
+*{box-sizing:border-box;transition:background-color .15s,color .15s,border-color .15s;}
+body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;max-width:880px;margin:0 auto;padding:1.5rem 1rem 4rem;color:var(--text-primary);background:var(--bg);line-height:1.62;}
+h1{font-size:24px;font-weight:600;margin:0 0 4px;}
+h2{font-size:19px;font-weight:600;margin:34px 0 12px;padding-top:14px;border-top:1px solid var(--border);}
+h3{font-size:15.5px;font-weight:600;margin:14px 0 6px;}
+.sub{font-size:14px;color:var(--text-secondary);margin:0 0 6px;}
+p{margin:0 0 10px;}
+a{color:var(--purple-s);text-decoration:none;border-bottom:1px solid transparent;}
+a:hover{border-bottom-color:var(--purple-s);}
+.topbar{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;}
+button{font:inherit;color:var(--text-primary);font-size:13px;padding:6px 14px;border:.5px solid var(--border-strong);border-radius:var(--radius);background:transparent;cursor:pointer;}
+button:hover{background:var(--surface-1);}
+.callout{background:var(--note-bg);border:1px solid var(--note-border);border-radius:var(--radius);padding:12px 16px;margin:14px 0;font-size:14px;}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:2px 10px;border-radius:99px;white-space:nowrap;}
+.g{background:var(--teal-f);color:var(--teal-t);border:1px solid var(--teal-s);}
+.a{background:var(--note-bg);color:var(--note-text);border:1px solid var(--amber);}
+.r{background:var(--coral-f);color:var(--coral-t);border:1px solid var(--coral-s);}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;}
+.dot.green{background:var(--green);}.dot.amber{background:var(--amber);}.dot.red{background:var(--red);}
+.card{background:var(--surface-2);border:.5px solid var(--border);border-radius:12px;padding:13px 16px;margin:0 0 12px;}
+.card .t{font-weight:600;display:block;margin-bottom:3px;}
+.card p{font-size:13.5px;margin:0;}
+.grid{display:grid;gap:10px;grid-template-columns:1fr;}
+@media(min-width:700px){.grid{grid-template-columns:1fr 1fr;}}
+.grid .card{margin:0;}
+.want .card{border-left:4px solid var(--purple-s);}
+pre.fmt{background:var(--surface-1);border:1px dashed var(--border-strong);border-radius:8px;padding:12px 14px;font-size:13.5px;font-family:ui-monospace,Consolas,monospace;white-space:pre-wrap;margin:8px 0;}
+ul.rules{margin:6px 0;padding-left:20px;}
+ul.rules li{margin:0 0 8px;}
+.foot{font-size:12px;color:var(--text-muted);margin-top:28px;border-top:1px solid var(--border);padding-top:12px;}
+@media print{.topbar button{display:none;}body{background:#fff;color:#000;}}
+</style>
+</head>
+<body>
+<div class="topbar">
+<div>
+<h1>Recherche-Werkstatt: Fall Jens Söring</h1>
+<p class="sub">Gemeinsame Faktensammlung zum <a href="./index.html">Ermittlerboard</a> · Dokumente finden, Verbindungen belegen, Fehler melden</p>
+</div>
+<button id="themebtn" aria-label="Farbschema umschalten">Dunkles Design</button>
+</div>
+
+<p>Das <a href="./index.html">Ermittlerboard</a> bildet den Fall Söring ab: 81 Beteiligte, 141 belegte Verbindungen, der Zeitstrahl von 1984 bis heute. Jede Kachel dort stützt sich auf nachprüfbare Quellen – und genau da kannst du helfen: Es fehlen noch Originaldokumente, bessere Scans und Belege für einzelne Verbindungen. Diese Seite sagt dir, <b>was gesucht wird</b>, <b>wie du Funde meldest</b> und <b>nach welchen Regeln</b> hier gearbeitet wird.</p>
+
+<div class="callout"><b>Grundhaltung.</b> Jens Söring ist rechtskräftig verurteilt und beteuert seine Unschuld; über seinen Antrag von 2026 entscheidet der Court of Appeals of Virginia. Diese Sammlung bezieht keine Position – sie prüft Dokumente, aus beiden Richtungen. Funde, die Söring entlasten, sind genauso willkommen wie belastende. Was zählt, ist das Original.</div>
+
+<h2>Die Verlässlichkeits-Ampel</h2>
+<p>Jeder Fund wird vor dem Einbau ins Board eingestuft:</p>
+<p><span class="pill g"><span class="dot green"></span>🟢 Primär</span> Gerichtsdokumente, Behörden, neutrale Archive – direkt zitierbar.<br>
+<span class="pill a"><span class="dot amber"></span>🟡 Partei-Reproduktion</span> Echte Dokumente, aber auf Lager-Seiten gespiegelt (Verteidigungs- wie Anklage-Archive) – erst nach Abgleich mit dem Original zitierbar.<br>
+<span class="pill r"><span class="dot red"></span>🔴 Nicht verifizierbar</span> Nur vom Hörensagen oder hinter verschlossenen Akten – wird höchstens als „laut …" geführt.</p>
+
+<h2>Fahndungsliste: Diese Dokumente fehlen noch</h2>
+<div class="want grid">
+<div class="card"><span class="t">Petition 2026 („writ of actual innocence")</span><p>Der Volltext ist nicht online. Gesucht: Zugang über das Aktensystem des Court of Appeals of Virginia oder eine veröffentlichte Kopie. Bisher nur Presse-Zusammenfassungen (Cardinal News, WVTF, WTVR).</p></div>
+<div class="card"><span class="t">Chip Hardings 19-Seiten-Bericht (2017)</span><p>Der Untersuchungsbericht des Sheriffs kursiert nur in Auszügen der Presse. Gesucht: der vollständige Text oder ein Scan.</p></div>
+<div class="card"><span class="t">Antwort des Commonwealth (2026)</span><p>Sobald Attorney General Jay Jones dem Gericht antwortet: das Schriftstück selbst, nicht nur Berichte darüber.</p></div>
+<div class="card"><span class="t">Lemley-Artikel 1990 im Original</span><p>„Misfit, Murderess, Martyr" (Albemarle Magazine) – das einzige Interview, das Elizabeth Haysom je gab. Gesucht: Scan der Original-Ausgabe.</p></div>
+<div class="card"><span class="t">Roanoke-Times-Prozessarchiv 1990</span><p>Virginia Tech hat Tagesberichte digitalisiert (<a href="https://scholar.lib.vt.edu/VA-news/ROA-Times/issues/1990/rt9006/900613/06130339.htm">Beispiel</a>). Gesucht: systematische Sammlung aller Söring-Artikel Juni 1990 als Linkliste.</p></div>
+<div class="card"><span class="t">Zeitgenössische Berichte 1985–1987</span><p>Lokalpresse (Lynchburg, Bedford) zu Tat, Fahndung und Elizabeths Verfahren 1987 – Archive, Mikrofilm, Bibliotheksscans.</p></div>
+<div class="card"><span class="t">Bessere Scans der bekannten Schlüsseldokumente</span><p>Hudson-Brief an Gouverneur McAuliffe (12.9.2017, bisher nur Scribd), McClintock-Gutachten (bisher WSET-PDF), Briefe/Tagebuch-Exhibits #354/#355 – je näher an der Gerichts- oder Behördenquelle, desto besser.</p></div>
+<div class="card"><span class="t">FOIA-Spuren zum „FBI-Profil"</span><p>Ob ein förmliches Profil je existierte, ist offen – bisher belegt ist nur ein Memo über eine Anforderung. Gesucht: veröffentlichte FOIA-Bescheide oder Aktenzeichen.</p></div>
+<div class="card"><span class="t">Video- und Stream-Fundstellen mit Zeitstempel</span><p>In Sörings Videos und Livestreams werden immer wieder Dokumente gezeigt oder in Beschreibungen verlinkt. Gesucht: Fundstellen im Format <i>Video/Stream + hh:mm:ss + was ist zu sehen</i> – und öffentlich geteilte Dokument-Links (bitte nur, was er selbst veröffentlicht).</p></div>
+<div class="card"><span class="t">Prozess-Transkripte 1990 als Abgleich</span><p>Ein öffentliches Archiv (hammelwords.com) stellt OCR-Scans der Prozessakten bereit – Transkripte beider Verfahren, Autopsien, Analyse-Zertifikate. Gesucht: Abgleich einzelner Board-Kacheln gegen diese Originale, mit Seitenangabe.</p></div>
+</div>
+<p class="sub">Auch ohne Dokument hilfreich: Belege für einzelne Board-Verbindungen (wer sagte was wann, mit Fundstelle) und Korrekturen, wenn eine Kachel etwas falsch wiedergibt.</p>
+
+<h2>So meldest du einen Fund</h2>
+<p>Im Discord (oder im Stream-Chat, wenn gerade Recherche-Thema ist) – bitte in diesem Format, damit nichts verloren geht:</p>
+<pre class="fmt">FUND: [Dokument / Verbindung / Korrektur]
+INHALT: Ein Satz – was zeigt der Fund?
+QUELLE: Link oder genaue Fundstelle (Zeitung, Datum, Seite / Gericht, Az.)
+ORIGINAL? Wo liegt das Original – ist das ein Scan, eine Abschrift, eine Wiedergabe?</pre>
+<p>Was dann passiert: Der Fund wird gegen das Original geprüft und mit der Ampel eingestuft. Was standhält, wandert mit Quellenangabe ins Board – jede Änderung ist über die Versionsnummer (unten auf dem Board) nachvollziehbar. Es kommt also nichts „einfach so" auf die Karte, auch nicht aus dem eigenen Lager.</p>
+
+<h2>Spielregeln</h2>
+<ul class="rules">
+<li><b>Keine Namen von Menschen, die nie angeklagt wurden.</b> Im Netz kursieren Namen – etwa zu den zwei Verwandten aus einem Affidavit von 2025 oder zu Personen aus Sörings Erzählung. Sie sind nie angeklagt worden und werden hier grundsätzlich nicht namentlich geführt, egal aus welcher Quelle. Funde mit solchen Namen bitte ohne die Namen melden.</li>
+<li><b>Niemanden kontaktieren.</b> Keine Nachrichten an Beteiligte, Angehörige der Familien Haysom/Söring, Ermittler oder Zeugen – auch nicht „nur höflich fragen". Recherche heißt hier: Dokumente und Archive, nicht Menschen.</li>
+<li><b>Beide Lager-Archive sind Partei.</b> Die Verteidigungs-Seiten (jens-soering.de/.com, killingforlove.com) und die Anklage-Seiten (soeringguiltyascharged.com, thesoeringcase.substack.com) reproduzieren echte Dokumente – aber mit Deutung. Als Fundort okay, als Beleg erst nach Abgleich.</li>
+<li><b>Behauptung ≠ Beleg.</b> „Steht in einem Podcast/Video" reicht nicht – gesucht ist immer die Stelle, auf die sich das Video stützt.</li>
+<li><b>Fair bleiben.</b> Söring gilt als das, was er rechtlich ist: rechtskräftig verurteilt, seine Unschuldsbeteuerung ist dokumentiert. Weder „der Mörder lügt" noch „der Unschuldige wird verfolgt" ist hier eine Arbeitsgrundlage – nur Papier.</li>
+</ul>
+
+<h2>Werkzeuge</h2>
+<p>Das <a href="./index.html">Ermittlerboard</a> selbst hat eine Notizfunktion (Speicherung nur lokal in deinem Browser, „Als Textdatei exportieren" für den Export), Personensuche und Lager-Filter. Für Diskussionen im Discord gibt es das Beteiligten-Diagramm auch als statisches Bild zum Einbetten – frag im Kanal danach.</p>
+
+<p class="foot">Recherche-Werkstatt zum Ermittlerboard „Fall Jens Söring" (Haysom-Morde, Bedford County/Virginia, 30. März 1985). Diese Seite ruft zur Dokumenten-Recherche auf und bezieht keine Position zur Schuldfrage; es gilt die rechtskräftige Verurteilung von 1990, Sörings Unschuldsbeteuerung und das anhängige Verfahren vor dem Court of Appeals of Virginia sind dokumentiert. Bitte respektiert die Privatsphäre aller Beteiligten.</p>
+
+<script>
+var tb=document.getElementById('themebtn');
+function applyTheme(t){document.documentElement.setAttribute('data-theme',t);tb.textContent=(t==='dark')?'Helles Design':'Dunkles Design';}
+applyTheme(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+tb.addEventListener('click',function(){applyTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');});
+</script>
+</body>
+</html>
