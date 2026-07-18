@@ -78,7 +78,7 @@ a.qref:hover{border-bottom-color:var(--p-s);}
 <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;">
 <div>
 <h1>Fall Jens Söring – Ermittlerboard</h1>
-<p class="sub">Haysom-Morde, Bedford County (Virginia), 30. März 1985 · Stand: Juli 2026 · <span style="opacity:.6">v0.1.13</span></p>
+<p class="sub">Haysom-Morde, Bedford County (Virginia), 30. März 1985 · Stand: Juli 2026 · <span style="opacity:.6">v0.1.14</span></p>
 </div>
 <div style="display:flex;gap:8px;align-items:center;">
 <button id="themebtn" aria-label="Farbschema umschalten">Dunkles Design</button>
@@ -172,7 +172,7 @@ a.qref:hover{border-bottom-color:var(--p-s);}
 <table class="qt">
 <tr><th>Dokument</th><th></th><th>Fundstelle</th></tr>
 <tr id="q-wright"><td>Wright-Report – „The Detectives’ Report“ (Terry Wright, 454 S.)<span class="desc">Bericht des Scotland-Yard-Vernehmungsbeamten; reproduziert zahlreiche Original-Scans (Custody Records, Prozess-Exhibits, Serologie- und DNA-Unterlagen).</span></td><td class="amp">🟡</td><td><a href="https://soeringguiltyascharged.com/wp-content/uploads/2020/01/the-detectives-report-by-terry-wright-final.pdf" target="_blank" rel="noopener">englisch (PDF)</a> · <a href="https://soeringguiltyascharged.com/wp-content/uploads/2020/11/der-wright-bericht-eine-deutsche-ubersetzung-2.pdf" target="_blank" rel="noopener">deutsche Übersetzung (PDF)</a></td></tr>
-<tr id="q-london"><td>Londoner Vernehmungen, 5.–7. Juni 1986<span class="desc">Transkripte und Tonband-Digitalisate der UK-Verhöre; deutsche Übersetzung der Vernehmungen vom 5. und 7. Juni als Blog-Serie (Teil 1 und 3).</span></td><td class="amp">🟡</td><td><a href="https://www.hammelwords.com/the-haysom-murders-document-archive" target="_blank" rel="noopener">Haysom-Archiv (Scans + Audio)</a> · <a href="https://thesoeringcase.substack.com/p/sorings-london-gestandnisse-auf-deutsch" target="_blank" rel="noopener">dt. Teil 1</a> · <a href="https://thesoeringcase.substack.com/p/sorings-londoner-gestandnisse-auf-753" target="_blank" rel="noopener">dt. Teil 3</a></td></tr>
+<tr id="q-london"><td>Londoner Vernehmungen, 5.–7. Juni 1986<span class="desc">Transkripte und Tonband-Digitalisate der UK-Verhöre; die Vernehmungen <b>aller drei Tage</b> (5., 6. und 7. Juni) liegen zusätzlich als deutsche Übersetzung vor — Blog-Serie Teil 1–3.</span></td><td class="amp">🟡</td><td><a href="https://www.hammelwords.com/the-haysom-murders-document-archive" target="_blank" rel="noopener">Haysom-Archiv (Scans + Audio)</a> · <a href="https://thesoeringcase.substack.com/p/sorings-london-gestandnisse-auf-deutsch" target="_blank" rel="noopener">dt. Teil 1</a> · <a href="https://thesoeringcase.substack.com/p/sorings-londoner-gestandnisse-auf" target="_blank" rel="noopener">dt. Teil 2</a> · <a href="https://thesoeringcase.substack.com/p/sorings-londoner-gestandnisse-auf-753" target="_blank" rel="noopener">dt. Teil 3</a></td></tr>
 <tr id="q-koenig"><td>Vernehmung durch StA Dr. Bernd Koenig (Bonn), Chelmsford 30.12.1986<span class="desc">43 Seiten, auf Deutsch geführt, Verteidiger anwesend; im Prozess 1990 eingeführt.</span></td><td class="amp">🟡</td><td><a href="https://soeringguiltyascharged.com/2018/03/15/transcript-of-jens-soerings-interview-with-the-german-prosecutor-30-december-1986/" target="_blank" rel="noopener">soeringguiltyascharged</a> · <a href="https://www.hammelwords.com/the-haysom-murders-document-archive" target="_blank" rel="noopener">Haysom-Archiv</a></td></tr>
 <tr id="q-hamilton"><td>Psychiatrisches Gutachten Dr. John Hamilton (Broadmoor, 11.12.1986)<span class="desc">Von der Verteidigung im Auslieferungsverfahren eingeführt; nicht zu verwechseln mit dem zweiten Gutachten (Dr. Henrietta Bullard), das nicht öffentlich ist.</span></td><td class="amp">🟡</td><td><a href="https://soeringguiltyascharged.com/2018/03/06/the-psychiatric-report-on-jens-soering-by-dr-john-hamilton-medical-director-of-broadmoor-hospital-dated-11-december-1986/" target="_blank" rel="noopener">soeringguiltyascharged</a></td></tr>
 <tr id="q-autopsie"><td>Autopsieberichte Derek und Nancy Haysom · Analyse-Zertifikate 1986<span class="desc">Amtliche Scans im frei zugänglichen Dokumentenarchiv.</span></td><td class="amp">🟡</td><td><a href="https://www.hammelwords.com/the-haysom-murders-document-archive" target="_blank" rel="noopener">Haysom-Archiv</a></td></tr>
@@ -452,7 +452,31 @@ var dot=document.createElement('span');dot.className='tl-dot';bd.appendChild(dot
 var h=document.createElement('p');h.className='tl-title';h.textContent=ev.t;bd.appendChild(h);
 var tx=document.createElement('p');tx.className='tl-text';tx.textContent=ev.x;bd.appendChild(tx);
 if(ev.p&&ev.p.length){var ch=document.createElement('div');ch.className='tl-chips';ev.p.forEach(function(id){var n=byId[id];if(!n)return;var b=document.createElement('button');b.textContent=n.l.join(' ');b.addEventListener('click',function(){select(id);document.getElementById('panel').scrollIntoView({behavior:'smooth',block:'center'});});ch.appendChild(b);});bd.appendChild(ch);}
+if(typeof tlDocs!=='undefined'&&tlDocs[ev.d]){var qc=document.createElement('div');qc.className='tl-chips';tlDocs[ev.d].forEach(function(qid){var row=document.getElementById(qid);if(!row)return;var td=row.querySelector('td');if(!td)return;var cl=td.cloneNode(true);var ds=cl.querySelector('.desc');if(ds&&ds.parentNode)ds.parentNode.removeChild(ds);var lab=cl.textContent.replace(/\s+/g,' ').trim();if(!lab)return;var b=document.createElement('button');b.textContent='📄 '+lab;b.title='Quelle im Reiter „Dokumente & Quellen" öffnen';b.addEventListener('click',function(){goQuelle(qid);});qc.appendChild(b);});if(qc.children.length)bd.appendChild(qc);}
 li.appendChild(dd);li.appendChild(bd);ul.appendChild(li);});}
+/* v0.1.14: Dokument-Chips im Zeitstrahl — Ereignis → Quelle; Klick öffnet den Reiter „Dokumente & Quellen" auf der Zeile.
+   Kuratiert: nur Zuordnungen, die das Ereignis wirklich belegen (keine Vollabdeckung).
+   Schlüssel = Ereignis-Datum (in der Ereignisliste eindeutig); die Chip-Beschriftung wird zur Laufzeit
+   aus der Quellen-Zeile gelesen — kein zweiter Titel-Bestand, kein Drift. */
+var tlDocs={
+'Dez. 1984 / Jan. 1985':['q-christmas'],
+'April 1985':['q-autopsie'],
+'Juni 1986':['q-london','q-protokoll-0806'],
+'11. Dez. 1986':['q-hamilton','q-bullard'],
+'30. Dez. 1986':['q-koenig'],
+'Okt. 1987':['q-transkripte'],
+'7. Juli 1989':['q-egmr'],
+'Juni 1990':['q-transkripte','q-roanoke'],
+'2009':['q-dfs2009'],
+'2016':['q-kfl-doku'],
+'2017':['q-hudson','q-harding'],
+'Nov. 2019':['q-vpb'],
+'2022':['q-system-podcast'],
+'Herbst 2023':['q-netflix-doku'],
+'2025':['q-petition-scans','q-wset'],
+'17. Feb. 2026':['q-writ','q-writ-statute'],
+'Mitte 2026':['q-cardinal']
+};
 renderTimeline();
 select('jens');
 function showView(v){document.getElementById('view-board').hidden=(v!=='board');document.getElementById('view-quellen').hidden=(v!=='quellen');document.querySelectorAll('#viewtabs button').forEach(function(b){b.setAttribute('aria-pressed',String(b.getAttribute('data-v')===v));});if(history.replaceState){history.replaceState(null,'',location.pathname+location.search+(v==='quellen'?'#quellen':''));}}
